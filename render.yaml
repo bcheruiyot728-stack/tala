@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: tala-2da3
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: PAYMENT_PROVIDER
+        value: daraja
+      - key: JWT_SECRET
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://talaextra-nu.vercel.app
+      - key: FRONTEND_URL
+        value: https://talaextra-nu.vercel.app
+      - key: ALLOWED_BASE_DOMAIN
+        value: talaextra-nu.vercel.app
+      - key: APP_PUBLIC_URL
+        value: https://tala-2da3.onrender.com
+      - key: MONGODB_URI
+        sync: false
+      - key: DARAJA_CONSUMER_KEY
+        sync: false
+      - key: DARAJA_CONSUMER_SECRET
+        sync: false
+      - key: DARAJA_BUSINESS_SHORTCODE
+        value: 4347195
+      - key: DARAJA_PARTYB_SHORTCODE
+        value: 1601554
+      - key: DARAJA_PASSKEY
+        sync: false
+      - key: DARAJA_CALLBACK_URL
+        value: https://tala-2da3.onrender.com/api/payments/callback
+      - key: DARAJA_ENVIRONMENT
+        value: production
+      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: VAPID_PRIVATE_KEY
+        sync: false
+      - key: VAPID_SUBJECT
+        sync: false
